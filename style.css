@@ -1,0 +1,36 @@
+body {
+    margin: 50px;
+    font-family: sans-serif;
+    cursor:default;
+}
+
+.center {
+    text-align: center;
+    /* margin: 50px */
+}
+
+button {
+    margin: 50px;
+    border: none;
+    background: none;
+    right: 20%;
+    position: fixed;
+    /* color: white; */
+    /* font-size: large; */
+    /* padding: 10px; */
+}
+
+button:hover{
+    opacity: 70%;
+    cursor: pointer;
+}
+
+#audio {
+    margin-bottom: 50px;
+}
+
+#lyrics {
+    color: lightgrey;
+    font-size: 12vh;
+    line-height: 80%;
+}
