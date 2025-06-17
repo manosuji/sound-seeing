@@ -5,20 +5,26 @@ const timeline = [
   { type: "word", content: "told", start: 5.78 },
   { type: "word", content: "me", start: 6.08 },
   { type: "word", content: "recently", start: 6.30 },
-  { type: "word", content: "that", start: 7.10 },
+  { type: "word", content: "/ that", start: 7.10 },
   { type: "word", content: "everything", start: 7.34 },
-  { type: "word", content: "all", start: 8.76 },
+  { type: "word", content: "/ all", start: 8.76 },
   { type: "word", content: "of", start: 8.82 },
   { type: "word", content: "us", start: 8.86 },
-  { type: "word", content: "is", start: 10.38 },
+  { type: "word", content: "/ is", start: 10.38 },
   { type: "word", content: "just", start: 10.51 },
   { type: "word", content: "springs", start: 11.95 },
+  { type: "word", content: "/ at", start: 14.00 },
+  { type: "word", content: "first", start: 14.00 },
+  { type: "word", content: "I", start: 14.00 },
+  { type: "word", content: "deny", start: 14.00 },
+  { type: "word", content: "and", start: 14.00 },
+  { type: "word", content: "dawdle", start: 14.00 },
   
   // Images
-  { type: "image", filename: "star1.png", start: 8.00, left: 36, top: 20 },
-  { type: "image", filename: "star2.png", start: 9.15, left: 62, top: 22 },
-  { type: "image", filename: "star3.png", start: 11.15, left: 80, top: 21 },
-  { type: "image", filename: "spring.png", start: 12.58, left: 22, top: 30 }
+  { type: "image", filename: "star1.png", start: 8.00, x: 550, y: 100 },
+  { type: "image", filename: "star2.png", start: 9.15, x: 100, y: 150 },
+  { type: "image", filename: "star3.png", start: 11.15, x: 400, y: 250 },
+  { type: "image", filename: "spring.png", start: 12.58, x: 500, y: 200 }
 ];
 
 // Sort timeline by start time
@@ -38,7 +44,7 @@ function displayObjects() {
                 // Highlight the word using currentWordIndex instead of timeline index
                 const span = document.getElementById(`word-${currentWordIndex}`);
                 if (span) {
-                    span.style.color = "blue";
+                    span.style.color = "slategrey";
                 }
                 currentWordIndex++; // Move to next word only when a word is processed
             } else if (obj.type === "image") {
@@ -48,10 +54,9 @@ function displayObjects() {
                 img.alt = obj.filename;
                 img.id = obj.filename;
 
-                img.style.position = "fixed";
-                img.style.left = `${obj.left}%`;
-                img.style.top = `${obj.top}%`;
-                img.style.transform = "translate(-50%, -50%)";
+                img.style.position = "absolute";
+                img.style.left = `${obj.x}px`;
+                img.style.top = `${obj.y}px`;
 
                 document.getElementById("imageContainer").appendChild(img);
             }
